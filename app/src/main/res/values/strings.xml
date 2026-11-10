@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Nexus Classic</string>
+    <string name="wallpaper_description">The original Nexus lights and pyramid grid, brought back for modern Android.</string>
+    <string name="subtitle">A little piece of Android history.</string>
+    <string name="hint">Tap the preview to send out four coloured trails.</string>
+    <string name="preview_apply">Preview &amp; set wallpaper</string>
+    <string name="frame_rate">Animation</string>
+    <string name="smooth">Smooth · 60 fps</string>
+    <string name="battery">Battery saving · 30 fps</string>
+    <string name="power_hint">Battery Saver uses 30 fps. Animation pauses when hidden.</string>
+    <string name="no_picker">No live wallpaper picker is available on this device.</string>
+</resources>

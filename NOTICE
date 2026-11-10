@@ -1,0 +1,17 @@
+Nexus Classic for Android
+
+Original Nexus wallpaper, artwork and pulse behaviour:
+Copyright (C) 2009 The Android Open Source Project.
+Licensed under the Apache License, Version 2.0 (LICENSE and AOSP_NOTICE).
+
+Source: https://android.googlesource.com/platform/packages/wallpapers/Basic/+/android-2.2_r1/
+Commit: 0e5bf9291034aaf2a7ae8ae82de5a8a7024435ff
+Original assets copied unchanged from res/drawable-hdpi:
+  pyramid_background.png, pulse.png, glow.png
+
+Changes: RenderScript replaced by a Kotlin animation model and an OpenGL ES
+sprite renderer. Artwork scales proportionally to modern displays, the grid
+remains square, and the background extends vertically. Native wallpaper
+preview, frame pacing, visibility management and battery saving added.
+The Android 2.2 palette and 0.8 alpha are retained. No Qt or Plasma dependency.
+New code Copyright 2026 Xef, licensed under Apache-2.0.
