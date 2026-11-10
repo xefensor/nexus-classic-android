@@ -16,6 +16,7 @@ class NexusModelTest {
             assertTrue(pulse.dx == 0f || pulse.dy == 0f)
             assertTrue(pulse.start >= 0.0 && pulse.start < 2.0)
             assertTrue(pulse.color in 0..3)
+            if (pulse.dx != 0f) assertEquals(7f, pulse.y % 14f, .001f)
         }
     }
     @Test fun tapSnapsAndSendsFourDifferentColorsAtOriginalSpeed() {
@@ -25,7 +26,7 @@ class NexusModelTest {
         assertEquals(4, burst.map { it.color }.toSet().size)
         for (p in burst) {
             assertEquals(119f, p.x, .001f)
-            assertEquals(443f, p.y, .001f)
+            assertEquals(441f, p.y, .001f)
             assertEquals(300f, hypot(p.dx, p.dy), .001f)
         }
         assertEquals(listOf(300f, -300f, 0f, 0f), burst.map { it.dx })
@@ -74,6 +75,14 @@ class NexusModelTest {
         val landscape = SceneGeometry(2400, 1080)
         assertEquals(g.scale, landscape.scale, 0f)
         assertEquals(0f, landscape.offset(1f), 0f)
+    }
+    @Test fun tapStaysOnTheTextureGridWithAPartialLastRow() {
+        val geometry = SceneGeometry(1080, 2400)
+        val scene = NexusModel(geometry.width, geometry.height, 9)
+        scene.tap(geometry.worldX(540f, .5f), geometry.worldY(1200f), 0.0)
+        val p = scene.pulses[20]
+        assertEquals(7f, p.x % 14f, .001f)
+        assertEquals(7f, p.y % 14f, .001f)
     }
     @Test fun hiddenTimeDoesNotAdvanceAnimation() {
         val clock = AnimationClock()

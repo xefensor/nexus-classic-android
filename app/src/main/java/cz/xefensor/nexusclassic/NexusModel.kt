@@ -50,7 +50,7 @@ class NexusModel(val width: Float, val height: Float, seed: Int = Random.nextInt
             p.dx = 0f; p.dy = if (positive) speed else -speed
         } else {
             p.x = if (positive) half else width + half
-            p.y = height - (floor(random.nextFloat() * height / CELL) * CELL + half)
+            p.y = floor(random.nextFloat() * height / CELL) * CELL + half
             p.dx = if (positive) speed else -speed; p.dy = 0f
         }
         p.start = time + random.nextInt(2000) / 1000.0
@@ -78,7 +78,7 @@ class NexusModel(val width: Float, val height: Float, seed: Int = Random.nextInt
     fun tap(x: Float, y: Float, time: Double): Int {
         advance(time)
         val snapX = floor(x / CELL) * CELL + CELL / 2
-        val snapY = height - (floor((height - y) / CELL) * CELL + CELL / 2)
+        val snapY = floor(y / CELL) * CELL + CELL / 2
         val color = random.nextInt(4)
         var count = 0
         for (i in AMBIENT_COUNT until pulses.size) {

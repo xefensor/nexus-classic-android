@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-- Seven JVM tests: pulse initialization, four-way grid-snapped taps, bounded extra pool, complete-tail expiry, speed independence, Pixel 8a coordinate mapping and hidden-time handling.
+- Eight JVM tests: pulse initialization, four-way grid-snapped taps, bounded extra pool, complete-tail expiry, speed independence, Pixel 8a coordinate mapping and hidden-time handling.
 - Android lint and optimized release build.
 - Three instrumentation tests on the Pixel 8a AVD at 1080 × 2400, Android 17 (API 37), x86_64 with 16 KB pages and SwiftShader rendering: preview pause/resume and recreation, persisted frame-rate selection, and visible coloured pixels after a tap.
 
