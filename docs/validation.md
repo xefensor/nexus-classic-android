@@ -10,7 +10,11 @@ The emulator uses an installed Android 17 beta system image. It checks rendering
 
 ## Manual emulator checks
 
-The signed release APK is checked through its normal app and system wallpaper picker entry points, including application to the home and lock screens, tap interaction, rotation and reopening settings. Captures in this directory come from the emulator.
+The signed release APK was checked through its normal app and system wallpaper picker entry points: home and lock-screen application, tap interaction, landscape layout and reopening settings. Captures in this directory come from the emulator.
+
+Service diagnostics confirmed a 1080 × 2400 rendering surface. The frame counter stopped while Settings covered the wallpaper and while the screen was off, then resumed after waking. Both frame-rate preferences reached the applied engine. Short, approximately two-second samples reported 30.1 frames/s in 30 fps mode and 52.1 frames/s in 60 fps mode with SwiftShader. These are emulator smoke checks, not sustained hardware benchmarks; the 60 fps target was not sustained in that sample.
+
+The release APK signature was verified with Android Build Tools, and an update installed successfully using the same private signing key. Lint reports no errors; its remaining advisory is that a newer Gradle release exists than the intentionally pinned version.
 
 ## Physical Pixel 8a
 
